@@ -1,23 +1,37 @@
 package com.example.practice.car.object;
 
+import com.example.practice.contract.car.CarFuelOpen;
+import com.example.practice.contract.car.CarOnOff;
+import com.example.practice.contract.car.CarType;
+
 public class Car {
 
     private Long carId;
     private String carName;
-    private String carType;
+    private CarType carType;
     private String createdYear;
-    private String gasAmount;
-    private String isReadyToGetGas;
+    private Long gasAmount;
+    private CarOnOff isOnOrOff;
+    private CarFuelOpen isReadyToGetGas;
     private Long price;
 
-    public Car(Long carId, String carName, String carType, String createdYear, String gasAmount, String isReadyToGetGas, Long price) {
+    public Car(Long carId, String carName, CarType carType, String createdYear, Long gasAmount, CarOnOff isOnOrOff, CarFuelOpen isReadyToGetGas, Long price) {
         this.carId = carId;
         this.carName = carName;
         this.carType = carType;
         this.createdYear = createdYear;
         this.gasAmount = gasAmount;
+        this.isOnOrOff = isOnOrOff;
         this.isReadyToGetGas = isReadyToGetGas;
         this.price = price;
+    }
+
+    public void setIsOnOrOff(CarOnOff isOnOrOff) {
+        this.isOnOrOff = isOnOrOff;
+    }
+
+    public void setIsReadyToGetGas(CarFuelOpen isReadyToGetGas) {
+        this.isReadyToGetGas = isReadyToGetGas;
     }
 
     public void setCarId(Long carId) {
@@ -28,7 +42,7 @@ public class Car {
         this.carName = carName;
     }
 
-    public void setCarType(String carType) {
+    public void setCarType(CarType carType) {
         this.carType = carType;
     }
 
@@ -40,20 +54,16 @@ public class Car {
         this.price = price;
     }
 
-    public void setGasAmount(String gasAmount) {
+    public void setGasAmount(Long gasAmount) {
         this.gasAmount = gasAmount;
     }
 
-    public String getGasAmount() {
+    public Long getGasAmount() {
         return gasAmount;
     }
 
-    public String getIsReadyToGetGas() {
+    public CarFuelOpen getIsReadyToGetGas() {
         return isReadyToGetGas;
-    }
-
-    public void setIsReadyToGetGas(String isReadyToGetGas) {
-        this.isReadyToGetGas = isReadyToGetGas;
     }
 
     public Long getCarId() {
@@ -64,7 +74,7 @@ public class Car {
         return carName;
     }
 
-    public String getCarType() {
+    public CarType getCarType() {
         return carType;
     }
 
@@ -74,6 +84,10 @@ public class Car {
 
     public Long getPrice() {
         return price;
+    }
+
+    public CarOnOff getIsOnOrOff() {
+        return isOnOrOff;
     }
 
     @Override
@@ -87,5 +101,9 @@ public class Car {
                 ", isReadyToGetGas='" + isReadyToGetGas + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public Long calGasAmount (Long usedGas) {
+        return this.gasAmount - usedGas;
     }
 }
