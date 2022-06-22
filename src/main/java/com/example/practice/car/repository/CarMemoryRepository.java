@@ -18,6 +18,11 @@ public class CarMemoryRepository implements CarRepository {
     }
 
     @Override
+    public void update(Car car, Long id) {
+        store.put(id, car);
+    }
+
+    @Override
     public Car findById(Long carId) {
         return store.get(carId);
     }

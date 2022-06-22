@@ -103,7 +103,8 @@ public class Car {
                 '}';
     }
 
-    public Long calGasAmount (Long usedGas) {
-        return this.gasAmount - usedGas;
+    public void calGasAmount (Long usedGas) {
+        this.gasAmount = this.gasAmount - usedGas;
+        System.out.println("결과 = " + toString());
     }
 }

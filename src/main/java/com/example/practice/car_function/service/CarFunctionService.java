@@ -13,7 +13,6 @@ public class CarFunctionService implements CarFunction {
         if (car.getIsOnOrOff() == CarOnOff.ON) {
             car.calGasAmount(10L);
         }
-
         return;
     }
 }

@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.*;
 class CarServiceImplTest {
 
     @Test
-    @DisplayName("findCarTest 메서드 호출")
+    @DisplayName("자동차를 조회할 수 있다.")
     void findCarTest() {
         // given
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
