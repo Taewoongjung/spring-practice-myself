@@ -9,6 +9,7 @@ import com.example.practice.contract.car.CarOnOff;
 import com.example.practice.contract.car.CarType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
@@ -16,26 +17,42 @@ import static org.assertj.core.api.Assertions.*;
 class CarServiceImplTest {
 
     @Test
-    @DisplayName("자동차를 조회할 수 있다.")
+    @DisplayName("자동차가 움직이면 기름이 소모된다.")
     void findCarTest() {
         // given
-        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
-        CarServiceImpl carService = ac.getBean(CarServiceImpl.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+
         CarFunctionService carFunctionService = ac.getBean(CarFunctionService.class);
         CarMemoryRepository carMemoryRepository = ac.getBean(CarMemoryRepository.class);
-        carMemoryRepository.save(new Car(1L, "GV80", CarType.SUV, "2022", 70L, CarOnOff.OFF, CarFuelOpen.OPEN, 70000000000L));
+        carMemoryRepository.save(new Car(1L, "GV80", CarType.SUV, "2022", 70L, CarOnOff.ON, CarFuelOpen.OPEN, 70000000000L));
+        CarServiceImpl carServiceImpl = new CarServiceImpl(carMemoryRepository, carFunctionService);
 
         // when
-        Car actual = carService.findCar(1L);
+        Car testCar = carMemoryRepository.findById(1L);
+        carServiceImpl.goAheadCar(testCar);
+        Car actual = carMemoryRepository.findById(1L);
 
         // then
         assertThat(actual).isNotNull();
-        assertThat(actual.getCarId()).isEqualTo(1L);
-        assertThat(actual.getCarType()).isEqualTo(CarType.SUV);
-        assertThat(actual.getCreatedYear()).isEqualTo("2022");
-        assertThat(actual.getGasAmount()).isEqualTo(70L);
-        assertThat(actual.getIsOnOrOff()).isEqualTo(CarOnOff.OFF);
+        assertThat(actual.getGasAmount()).isEqualTo(60L);
+    }
+
+    @Test
+    @DisplayName("주유구가 닫혀있으면 열 수 있다.")
+    void openGas() {
+        // given
+        CarFunctionService carFunctionService = new CarFunctionService();
+        CarMemoryRepository carMemoryRepository = new CarMemoryRepository();
+        carMemoryRepository.save(new Car(1L, "GV80", CarType.SUV, "2022", 70L, CarOnOff.ON, CarFuelOpen.CLOSED, 70000000000L));
+        CarServiceImpl carServiceImpl = new CarServiceImpl(carMemoryRepository, carFunctionService);
+
+        // when
+        Car testCar = carMemoryRepository.findById(1L);
+        carServiceImpl.openGasHole(testCar);
+        Car actual = carMemoryRepository.findById(1L);
+
+        // then
+        assertThat(actual).isNotNull();
         assertThat(actual.getIsReadyToGetGas()).isEqualTo(CarFuelOpen.OPEN);
-        assertThat(actual.getPrice()).isEqualTo(70000000000L);
     }
 }

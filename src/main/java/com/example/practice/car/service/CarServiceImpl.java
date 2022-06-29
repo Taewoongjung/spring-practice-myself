@@ -15,9 +15,8 @@ public class CarServiceImpl implements CarService {
     private final CarFunctionService carFunctionService;
 
     @Override
-    public Car findCar(Long carId) {
-
-        return carMemoryRepository.findById(carId);
+    public void openGasHole(Car car) {
+        carFunctionService.open(car);
     }
 
     @Override

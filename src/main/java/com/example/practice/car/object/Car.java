@@ -26,38 +26,6 @@ public class Car {
         this.price = price;
     }
 
-    public void setIsOnOrOff(CarOnOff isOnOrOff) {
-        this.isOnOrOff = isOnOrOff;
-    }
-
-    public void setIsReadyToGetGas(CarFuelOpen isReadyToGetGas) {
-        this.isReadyToGetGas = isReadyToGetGas;
-    }
-
-    public void setCarId(Long carId) {
-        this.carId = carId;
-    }
-
-    public void setCarName(String carName) {
-        this.carName = carName;
-    }
-
-    public void setCarType(CarType carType) {
-        this.carType = carType;
-    }
-
-    public void setCreatedYear(String createdYear) {
-        this.createdYear = createdYear;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
-    }
-
-    public void setGasAmount(Long gasAmount) {
-        this.gasAmount = gasAmount;
-    }
-
     public Long getGasAmount() {
         return gasAmount;
     }
@@ -90,6 +58,10 @@ public class Car {
         return isOnOrOff;
     }
 
+    private void setIsReadyToGetGas(CarFuelOpen isReadyToGetGas) {
+        this.isReadyToGetGas = isReadyToGetGas;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -103,8 +75,14 @@ public class Car {
                 '}';
     }
 
-    public void calGasAmount (Long usedGas) {
+    public void calGasAmount(Long usedGas) {
         this.gasAmount = this.gasAmount - usedGas;
-        System.out.println("결과 = " + toString());
+        System.out.println("계산 결과 = " + toString());
     }
+
+    public void openGas() {
+        this.setIsReadyToGetGas(CarFuelOpen.OPEN);
+        System.out.println("가스구 결과 = " + toString());
+    }
+
 }
