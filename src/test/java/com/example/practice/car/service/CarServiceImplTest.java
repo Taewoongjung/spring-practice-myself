@@ -7,7 +7,6 @@ import com.example.practice.car_function.service.CarFunctionService;
 import com.example.practice.contract.car.CarFuelOpen;
 import com.example.practice.contract.car.CarOnOff;
 import com.example.practice.contract.car.CarType;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

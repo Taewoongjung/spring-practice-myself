@@ -4,7 +4,6 @@ import com.example.practice.car.object.Car;
 import com.example.practice.contract.car.CarFuelOpen;
 import com.example.practice.contract.car.CarOnOff;
 import com.example.practice.contract.car.CarType;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

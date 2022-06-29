@@ -4,7 +4,6 @@ import com.example.practice.car.abstraction.CarService;
 import com.example.practice.car.object.Car;
 import com.example.practice.car.repository.CarMemoryRepository;
 import com.example.practice.car_function.service.CarFunctionService;
-import com.example.practice.contract.car.CarOnOff;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +16,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car findCar(Long carId) {
+
         return carMemoryRepository.findById(carId);
     }
 
