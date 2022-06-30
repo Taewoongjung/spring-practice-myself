@@ -1,5 +1,8 @@
 package com.example.practice.gas_station_domain.gas_station.object;
 
+import lombok.Getter;
+
+@Getter
 public class GasStation {
 
     private Long gasStationId;
@@ -14,26 +17,6 @@ public class GasStation {
         this.brand = brand;
         this.price = price;
         this.ownerName = ownerName;
-    }
-
-    public Long getGasStationId() {
-        return gasStationId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
     }
 
     @Override
