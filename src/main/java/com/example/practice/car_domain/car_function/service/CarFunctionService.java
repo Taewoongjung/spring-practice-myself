@@ -13,7 +13,7 @@ public class CarFunctionService implements CarGoFunction, CarFuelOpenFunction {
     @Override
     public void goAhead(Car car) {
         if (car.getIsOnOrOff() == CarOnOff.ON) {
-            car.calGasAmount(10L);
+            car.calGasAmount(10);
         }
     }
 

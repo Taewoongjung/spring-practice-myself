@@ -10,12 +10,12 @@ public class Car {
     private String carName;
     private CarType carType;
     private String createdYear;
-    private Long gasAmount;
+    private int gasAmount;
     private CarOnOff isOnOrOff;
     private CarFuelOpen isReadyToGetGas;
     private Long price;
 
-    public Car(Long carId, String carName, CarType carType, String createdYear, Long gasAmount, CarOnOff isOnOrOff, CarFuelOpen isReadyToGetGas, Long price) {
+    public Car(Long carId, String carName, CarType carType, String createdYear, int gasAmount, CarOnOff isOnOrOff, CarFuelOpen isReadyToGetGas, Long price) {
         this.carId = carId;
         this.carName = carName;
         this.carType = carType;
@@ -26,7 +26,7 @@ public class Car {
         this.price = price;
     }
 
-    public Long getGasAmount() {
+    public int getGasAmount() {
         return gasAmount;
     }
 
@@ -75,7 +75,7 @@ public class Car {
                 '}';
     }
 
-    public void calGasAmount(Long usedGas) {
+    public void calGasAmount(int usedGas) {
         this.gasAmount = this.gasAmount - usedGas;
         System.out.println("계산 결과 = " + toString());
     }
@@ -83,6 +83,16 @@ public class Car {
     public void openGas() {
         this.setIsReadyToGetGas(CarFuelOpen.OPEN);
         System.out.println("가스구 결과 = " + toString());
+    }
+
+    public void closeGas() {
+        this.setIsReadyToGetGas(CarFuelOpen.CLOSED);
+        System.out.println("가스구 결과 = " + toString());
+    }
+
+    public void takeGas(int gasAmount) {
+        this.gasAmount = this.gasAmount + gasAmount;
+        System.out.println("가스 이만큼 넣었음(주유 받음) = " + gasAmount);
     }
 
 }

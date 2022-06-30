@@ -4,6 +4,7 @@ import com.example.practice.AutoAppConfig;
 import com.example.practice.gas_station_domain.gas_station.abstraction.GasStationRepository;
 import com.example.practice.gas_station_domain.gas_station.object.GasStation;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -13,6 +14,7 @@ import static org.assertj.core.api.Assertions.*;
 class GasStationMemoryRepositoryTest {
 
     @Test
+    @DisplayName("GasStationMemoryRepositoryTest 는 새로운 값을 가질 수 있다.")
     void saveTest() {
         // given
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);

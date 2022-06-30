@@ -29,4 +29,12 @@ public class GasStation {
                 ", ownerName='" + ownerName + '\'' +
                 '}';
     }
+
+    public int filling(int paid) {
+
+        int result = paid / this.price;
+        System.out.println("result = " + result);
+
+        return result;
+    }
 }

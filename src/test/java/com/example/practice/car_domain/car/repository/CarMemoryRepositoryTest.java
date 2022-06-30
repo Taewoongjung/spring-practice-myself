@@ -17,7 +17,7 @@ class CarMemoryRepositoryTest {
         // given
         CarMemoryRepository carMemoryRepository = new CarMemoryRepository();
         Long carId = 1L;
-        carMemoryRepository.save(new Car(carId, "GV80", CarType.SUV, "2022", 70L, CarOnOff.OFF, CarFuelOpen.OPEN, 70000000000L));
+        carMemoryRepository.save(new Car(carId, "GV80", CarType.SUV, "2022", 70, CarOnOff.OFF, CarFuelOpen.OPEN, 70000000000L));
 
         // when
         final Car actual = carMemoryRepository.findById(carId);
@@ -27,7 +27,7 @@ class CarMemoryRepositoryTest {
         assertThat(actual.getCarId()).isEqualTo(1L);
         assertThat(actual.getCarType()).isEqualTo(CarType.SUV);
         assertThat(actual.getCreatedYear()).isEqualTo("2022");
-        assertThat(actual.getGasAmount()).isEqualTo(70L);
+        assertThat(actual.getGasAmount()).isEqualTo(70);
         assertThat(actual.getIsOnOrOff()).isEqualTo(CarOnOff.OFF);
         assertThat(actual.getIsReadyToGetGas()).isEqualTo(CarFuelOpen.OPEN);
         assertThat(actual.getPrice()).isEqualTo(70000000000L);

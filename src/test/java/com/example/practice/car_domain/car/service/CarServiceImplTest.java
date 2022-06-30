@@ -24,7 +24,7 @@ class CarServiceImplTest {
 
         CarFunctionService carFunctionService = ac.getBean(CarFunctionService.class);
         CarMemoryRepository carMemoryRepository = ac.getBean(CarMemoryRepository.class);
-        carMemoryRepository.save(new Car(1L, "GV80", CarType.SUV, "2022", 70L, CarOnOff.ON, CarFuelOpen.OPEN, 70000000000L));
+        carMemoryRepository.save(new Car(1L, "GV80", CarType.SUV, "2022", 70, CarOnOff.ON, CarFuelOpen.OPEN, 70000000000L));
         CarServiceImpl carServiceImpl = new CarServiceImpl(carMemoryRepository, carFunctionService);
 
         // when
@@ -43,7 +43,7 @@ class CarServiceImplTest {
         // given
         CarFunctionService carFunctionService = new CarFunctionService();
         CarMemoryRepository carMemoryRepository = new CarMemoryRepository();
-        carMemoryRepository.save(new Car(1L, "GV80", CarType.SUV, "2022", 70L, CarOnOff.ON, CarFuelOpen.CLOSED, 70000000000L));
+        carMemoryRepository.save(new Car(1L, "GV80", CarType.SUV, "2022", 70, CarOnOff.ON, CarFuelOpen.CLOSED, 70000000000L));
         CarServiceImpl carServiceImpl = new CarServiceImpl(carMemoryRepository, carFunctionService);
 
         // when
