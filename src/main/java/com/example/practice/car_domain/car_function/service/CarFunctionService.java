@@ -1,8 +1,8 @@
-package com.example.practice.car_function.service;
+package com.example.practice.car_domain.car_function.service;
 
-import com.example.practice.car.object.Car;
-import com.example.practice.car_function.abstraction.CarFuelOpenFunction;
-import com.example.practice.car_function.abstraction.CarGoFunction;
+import com.example.practice.car_domain.car.object.Car;
+import com.example.practice.car_domain.car_function.abstraction.CarFuelOpenFunction;
+import com.example.practice.car_domain.car_function.abstraction.CarGoFunction;
 import com.example.practice.contract.car.CarFuelOpen;
 import com.example.practice.contract.car.CarOnOff;
 import org.springframework.stereotype.Component;

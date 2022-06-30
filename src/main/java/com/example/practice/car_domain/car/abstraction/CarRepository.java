@@ -1,6 +1,6 @@
-package com.example.practice.car.abstraction;
+package com.example.practice.car_domain.car.abstraction;
 
-import com.example.practice.car.object.Car;
+import com.example.practice.car_domain.car.object.Car;
 
 public interface CarRepository {
 

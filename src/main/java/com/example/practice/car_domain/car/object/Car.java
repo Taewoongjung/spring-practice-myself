@@ -1,4 +1,4 @@
-package com.example.practice.car.object;
+package com.example.practice.car_domain.car.object;
 
 import com.example.practice.contract.car.CarFuelOpen;
 import com.example.practice.contract.car.CarOnOff;

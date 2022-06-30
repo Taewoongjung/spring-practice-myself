@@ -1,7 +1,7 @@
-package com.example.practice.car.repository;
+package com.example.practice.car_domain.car.repository;
 
-import com.example.practice.car.abstraction.CarRepository;
-import com.example.practice.car.object.Car;
+import com.example.practice.car_domain.car.abstraction.CarRepository;
+import com.example.practice.car_domain.car.object.Car;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

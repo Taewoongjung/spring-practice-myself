@@ -1,9 +1,9 @@
-package com.example.practice.car.service;
+package com.example.practice.car_domain.car.service;
 
-import com.example.practice.car.abstraction.CarService;
-import com.example.practice.car.object.Car;
-import com.example.practice.car.repository.CarMemoryRepository;
-import com.example.practice.car_function.service.CarFunctionService;
+import com.example.practice.car_domain.car.abstraction.CarService;
+import com.example.practice.car_domain.car.object.Car;
+import com.example.practice.car_domain.car.repository.CarMemoryRepository;
+import com.example.practice.car_domain.car_function.service.CarFunctionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

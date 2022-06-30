@@ -1,8 +1,8 @@
-package com.example.practice.car_function.service;
+package com.example.practice.car_domain.car_function.service;
 
-import com.example.practice.car.object.Car;
-import com.example.practice.car.repository.CarMemoryRepository;
-import com.example.practice.car.service.CarServiceImpl;
+import com.example.practice.car_domain.car.object.Car;
+import com.example.practice.car_domain.car.repository.CarMemoryRepository;
+import com.example.practice.car_domain.car.service.CarServiceImpl;
 import com.example.practice.contract.car.CarFuelOpen;
 import com.example.practice.contract.car.CarOnOff;
 import com.example.practice.contract.car.CarType;
