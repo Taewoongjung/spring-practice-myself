@@ -8,7 +8,11 @@ import com.example.practice.contract.car.CarOnOff;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CarFunctionService implements CarGoFunction, CarFuelOpenFunction {
+public class CarFunctionService
+        implements
+            CarGoFunction,
+            CarFuelOpenFunction
+{
 
     @Override
     public void goAhead(Car car) {

@@ -1,6 +1,5 @@
 package com.example.practice.gas_station_domain.gas_station_function.service;
 
-import com.example.practice.AutoAppConfig;
 import com.example.practice.car_domain.car.object.Car;
 import com.example.practice.car_domain.car.repository.CarMemoryRepository;
 import com.example.practice.contract.car.CarFuelOpen;
@@ -9,11 +8,8 @@ import com.example.practice.contract.car.CarType;
 import com.example.practice.gas_station_domain.gas_station.abstraction.GasStationRepository;
 import com.example.practice.gas_station_domain.gas_station.object.GasStation;
 import com.example.practice.gas_station_domain.gas_station.repository.GasStationMemoryRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
 
