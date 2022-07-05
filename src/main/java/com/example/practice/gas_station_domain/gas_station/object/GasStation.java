@@ -1,8 +1,10 @@
 package com.example.practice.gas_station_domain.gas_station.object;
 
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class GasStation {
 
     private Long gasStationId;
@@ -17,17 +19,6 @@ public class GasStation {
         this.brand = brand;
         this.price = price;
         this.ownerName = ownerName;
-    }
-
-    @Override
-    public String toString() {
-        return "GasStation{" +
-                "gasStationId=" + gasStationId +
-                ", name='" + name + '\'' +
-                ", brand='" + brand + '\'' +
-                ", price=" + price +
-                ", ownerName='" + ownerName + '\'' +
-                '}';
     }
 
     public int filling(int paid) {
