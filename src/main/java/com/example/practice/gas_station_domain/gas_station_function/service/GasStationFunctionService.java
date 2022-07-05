@@ -4,12 +4,17 @@ import com.example.practice.car_domain.car.object.Car;
 import com.example.practice.car_domain.car.repository.CarMemoryRepository;
 import com.example.practice.contract.car.CarFuelOpen;
 import com.example.practice.gas_station_domain.gas_station.object.GasStation;
+import com.example.practice.gas_station_domain.gas_station_function.abstraction.GasStationCloseGasHoleFunction;
 import com.example.practice.gas_station_domain.gas_station_function.abstraction.GasStationFillGasFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GasStationFunctionService implements GasStationFillGasFunction{
+public class GasStationFunctionService
+        implements
+        GasStationFillGasFunction,
+        GasStationCloseGasHoleFunction
+{
     private final CarMemoryRepository carMemoryRepository;
 
     @Autowired
@@ -31,5 +36,10 @@ public class GasStationFunctionService implements GasStationFillGasFunction{
             car.closeGas();
             carMemoryRepository.update(car, car.getCarId());
         }
+    }
+
+    @Override
+    public void closeGasHole(Car car) {
+        car.closeGas(); // 주유구 닫기
     }
 }
