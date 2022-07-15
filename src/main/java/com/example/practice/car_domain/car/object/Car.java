@@ -4,6 +4,8 @@ import com.example.practice.contract.car.CarFuelOpen;
 import com.example.practice.contract.car.CarOnOff;
 import com.example.practice.contract.car.CarType;
 
+import java.util.Objects;
+
 public class Car {
 
     private Long carId;
@@ -95,4 +97,16 @@ public class Car {
         System.out.println("가스 이만큼 넣었음(주유 받음) = " + gasAmount);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return gasAmount == car.gasAmount && Objects.equals(carId, car.carId) && Objects.equals(carName, car.carName) && carType == car.carType && Objects.equals(createdYear, car.createdYear) && isOnOrOff == car.isOnOrOff && isReadyToGetGas == car.isReadyToGetGas && Objects.equals(price, car.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carId, carName, carType, createdYear, gasAmount, isOnOrOff, isReadyToGetGas, price);
+    }
 }
